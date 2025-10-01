@@ -1,11 +1,11 @@
-/* 폰트 불러오기 */
-@import url('https://fonts.googleapis.com/css2?family=Cafe24+Ohsquare&display=swap');
+/* 배달의민족 주아체 불러오기 */
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/BMJUA.css');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Cafe24 Ohsquare', sans-serif;
-  background: #000;
+  font-family: 'BMJUA', sans-serif;
+  background: #e0f7fa; /* 부드러운 세레니티 톤 */
   overflow: hidden;
 }
 
@@ -35,60 +35,61 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+  background: #fff0f5; /* 로즈쿼츠 톤 */
+  padding: 25px 20px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 -8px 25px rgba(0,0,0,0.25);
 }
 
 /* 스피커 */
 #speaker {
   font-weight: bold;
-  font-size: 22px;
-  margin-bottom: 8px;
-  color: #ff4da6;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #d16ba5; /* 진한 로즈쿼츠 */
 }
 
 /* 대사 */
 #text {
   font-size: 20px;
-  margin-bottom: 16px;
-  line-height: 1.5;
-  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #6c5b7b; /* 부드러운 보라톤 */
 }
 
 /* 선택지 박스 */
 #choices {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 /* 선택지 버튼 */
 .choice-btn {
-  padding: 12px;
+  padding: 14px;
   border: none;
-  border-radius: 20px; /* 동글동글 */
+  border-radius: 25px; /* 동글동글 */
   font-size: 18px;
   cursor: pointer;
-  background: linear-gradient(135deg, #ffb6c1, #ff85a1);
+  background: linear-gradient(135deg, #f6c1d4, #d5c6f0); /* 로즈쿼츠 -> 세레니티 그라데이션 */
   color: #fff;
-  font-family: 'Cafe24 Ohsquare', sans-serif;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  font-family: 'BMJUA', sans-serif;
+  font-weight: bold;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
   transition: 0.3s;
 }
 
 .choice-btn:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #ff85a1, #ff4da6);
+  background: linear-gradient(135deg, #d16ba5, #6c5bff); /* hover 시 강조 */
 }
 
 /* 엔딩 */
 .ending {
   text-align: center;
   font-size: 20px;
-  color: #ff4da6;
+  color: #d16ba5; /* 로즈쿼츠 */
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
