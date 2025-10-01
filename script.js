@@ -46,24 +46,66 @@ const story = {
   love_break3: { speaker: "민규", text: "우리 뭐 먹을까?", choices: [{ text: "마라탕", next: "mala_end" }, { text: "민규정식", next: "mingu_menu1" }] },
   mala_end: { speaker: "나레이션", text: "(마라탕을 좋아하는 수진이와 다희만 기뻐합니다) — END", end: true },
 
-  mingu_menu1: { speaker: "민규", text: "헉 나도 그거 먹고 싶었어!(한 쪽에서 큰 소리가 들려왔습니다)\n...: 워쓰창슈!!\n수진: 워쓰라오후!! 진정해!!\n호시: 워쓰창슈!!\n민규: 에이 호시 형은 햄스터지~", choices: [{ text: "뒤통수를 친다", next: "backhit" }, { text: "동조한다", next: "agree1" }] },
-  backhit: { speaker: "나레이션", text: "민규가 상처받은 눈으로 뛰쳐나갔다 — END", end: true },
+  mingu_menu1: { 
+  speaker: "민규", 
+  text: "헉 나도 그거 먹고 싶었어!", 
+  choices: [{ text: "계속", next: "mingu_menu2" }] 
+},
+
+mingu_menu2: { 
+  speaker: "나레이션", 
+  text: "(한 쪽에서 큰 소리가 들려왔습니다)", 
+  choices: [{ text: "계속", next: "mingu_menu3" }] 
+},
+
+mingu_menu3: { 
+  speaker: "...", 
+  text: "워쓰창슈!!", 
+  choices: [{ text: "계속", next: "mingu_menu4" }] 
+},
+
+mingu_menu4: { 
+  speaker: "수진", 
+  text: "워쓰라오후!! 진정해!!", 
+  choices: [{ text: "계속", next: "mingu_menu5" }] 
+},
+
+mingu_menu5: { 
+  speaker: "호시", 
+  text: "워쓰창슈!!", 
+  choices: [{ text: "계속", next: "mingu_menu6" }] 
+},
+
+mingu_menu6: { 
+  speaker: "민규", 
+  text: "에이 호시 형은 햄스터지~", 
+  choices: [
+    { text: "뒤통수를 친다", next: "backhit" }, 
+    { text: "동조한다", next: "agree1" }
+  ] 
+},
+
+backhit: { 
+  speaker: "나레이션", 
+  text: "민규가 상처받은 눈으로 뛰쳐나갔다 — END", 
+  end: true 
+}
 
   agree1: { speaker: "민규", text: "그치 호시는 햄스터지", choices: [{ text: "계속", next: "agree2" }] },
   agree2: { speaker: "나레이션", text: "(수진이가 배신감 어린 표정으로 쳐다보지만 민규와 공감대를 형성했습니다)\n밥이 나왔다", choices: [{ text: "계속", next: "agree3" }] },
   agree3: { speaker: "민규", text: "지윤아 나 사실 내일 군대가..", choices: [{ text: "기다린다", next: "wait_military" }, { text: "기다리지 않는다", next: "no_wait" }] },
 
-  wait_military: { speaker: "지윤", text: "정말?ㅎㅎ 그럼 면회 와줄거지?\n오늘은 드디어 민규의 면회날이다", choices: [{ text: "거꾸로 신는다", next: "wrong_shoes" }, { text: "똑바로 신는다", next: "right_shoes1" }] },
+  wait_military: { speaker: "민규", text: "정말?ㅎㅎ 그럼 면회 와줄거지?\n오늘은 드디어 민규의 면회날이다", choices: [{ text: "거꾸로 신는다", next: "wrong_shoes" }, { text: "똑바로 신는다", next: "right_shoes1" }] },
   no_wait: { speaker: "민규", text: "원우형이 면회 와준댔어 그럼 안녕 — END", end: true },
 
   wrong_shoes: { speaker: "지윤", text: "거꾸로 신으면 개간지나죠?", choices: [{ text: "계속", next: "wrong_shoes2" }] },
-  wrong_shoes2: { speaker: "민규", text: "민규야 나왔어~", choices:[ { text: "계속", next: "wrong_shoes3" } ] },
+  wrong_shoes2: { speaker: "지윤", text: "민규야 나왔어~", choices:[ { text: "계속", next: "wrong_shoes3" } ] },
   wrong_shoes3: { speaker: "민규", text: "지윤아.. 너 바람피워? 실망이야 — END", end: true },
 
   right_shoes1: { speaker: "지윤", text: "하.. 똑바로 신으면 간지가 안나는데..", choices: [{ text: "계속", next: "right_shoes2" }] },
   right_shoes2: { speaker: "지윤", text: "민규야 나 오늘 너한테 할말이 있어..", choices: [{ text: "계속", next: "right_shoes3" }] },
-  right_shoes3: { speaker: "지윤", text: "웅 뭔데?", choices: [{ text: "계속", next: "right_shoes4" }] },
-  right_shoes4: { speaker: "민규", text: "민규야 사실 나..", choices: [{ text: "김민규(배우)", next: "actor" }, { text: "김민규(세븐틴)", next: "idol" }] },
+  right_shoes3: { speaker: "민규", text: "웅 뭔데?", choices: [{ text: "계속", next: "right_shoes4" }] },
+  right_shoes4: { speaker: "지윤", text: "민규야 사실 나 니가 좋아!!....", choices: [{ text: "김민규", next: "actor" }, { text: "김민규", next: "idol" }] },
 
   actor: { speaker: "배우 김민규", text: "그래!! 우리 사귀자! — END", end: true },
   idol: { speaker: "민규", text: "나..? 그래! 우리 사귀자!\n주지윤♡김민규의 사랑이 이루어졌다\n(few months later... 결혼 준비 중)", choices: [{ text: "라푼젤", next: "rapunzel" }, { text: "변발", next: "bye_end" }] },
