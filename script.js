@@ -46,7 +46,7 @@ const story = {
   love_break3: { speaker: "민규", text: "우리 뭐 먹을까?", choices: [{ text: "마라탕", next: "mala_end" }, { text: "민규정식", next: "mingu_menu1" }] },
   mala_end: { speaker: "나레이션", text: "(마라탕을 좋아하는 수진이와 다희만 기뻐합니다) — END", end: true },
 
-  mingu_menu1: { speaker: "민규", text: "헉 나도 그거 먹고 싶었어!", choices: [{ text: "뒤통수를 친다", next: "backhit" }, { text: "동조한다", next: "agree1" }] },
+  mingu_menu1: { speaker: "민규", text: "헉 나도 그거 먹고 싶었어!(한 쪽에서 큰 소리가 들려왔습니다)\n...: 워쓰창슈!!\n수진: 워쓰라오후!! 진정해!!\n호시: 워쓰창슈!!\n민규: 에이 호시 형은 햄스터지~", choices: [{ text: "뒤통수를 친다", next: "backhit" }, { text: "동조한다", next: "agree1" }] },
   backhit: { speaker: "나레이션", text: "민규가 상처받은 눈으로 뛰쳐나갔다 — END", end: true },
 
   agree1: { speaker: "민규", text: "그치 호시는 햄스터지", choices: [{ text: "계속", next: "agree2" }] },
@@ -72,6 +72,7 @@ const story = {
   bye_end: { speaker: "민규", text: "내 삶을 무시하는구나 우리 헤어지자 — END", end: true }
 };
 
+ 
 // === DOM 제어 ===
 const speakerEl = document.getElementById("speaker");
 const textEl = document.getElementById("text");
