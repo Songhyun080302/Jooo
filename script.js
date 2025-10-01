@@ -54,7 +54,7 @@ const story = {
       {text:"아 맞다! 민규야 미안.. 나 오늘 사랑하는 수진이랑 놀아야 돼", next:"sujin_love"}
     ]
   },
-  sujin_angry:{speaker:"수진",text:"미친 민규가 너랑 논다고? 호시는 어딨음? (호시를 찾아 떠났다) — END",end:true},
+  sujin_angry:{speaker:"수진",text:"미친 민규가 너랑 논다고? 호시는 어딨음? (호시를 찾아 떠났다), next ; "next_city"},
   sujin_love:{speaker:"수진",text:"헐.. 미친 민규를 버리고 나를 선택해 준거야..? 지윤아 나랑 사귀자♥\n(지윤과 수진이 결혼했습니다) — END",end:true},
 
   // 민규 루트 이어짐
