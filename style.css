@@ -24,7 +24,7 @@ body {
   max-height: 80%;
   opacity: 0;
   transition: opacity 0.5s;
-  pointer-events: none; /* 버튼 클릭 막지 않게 */
+  pointer-events: none;
 }
 
 #game {
