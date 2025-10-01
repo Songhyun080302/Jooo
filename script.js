@@ -1,3 +1,9 @@
+좋아요! 😄 그럼 지금까지 만든 전체 게임 JS 코드를 모든 엔딩 대사 표시 + 종료 메시지 + 재시작 버튼 + 캐릭터 fade까지 완전히 적용해서 수정해 드릴게요.
+
+⸻
+
+3️⃣ JS (script.js) – 전체 통합 + 엔딩 대사 문제 수정
+
 // === 스토리 정의 ===
 const story = {
   start: {
@@ -25,7 +31,7 @@ const story = {
 
   mingu_hand:{
     speaker:"민규",
-    text:"너네는 아직 나한테 안돼 지윤아 데이트 하러 가잫ㅎ",
+    text:"너네는 아직 나한테 안돼",
     char:"https://i.ibb.co/fQDyCZK/sample-char.png",
     choices:[
       {text:"아 진짜 준비도 다 안했는데 왜 이렇게 재촉해!!!!!", next:"mingu_bad"},
@@ -156,33 +162,25 @@ function showNode(id){
   // 선택지 초기화
   choicesEl.innerHTML = "";
 
-  // 종료 처리
+  // 종료 노드 처리
   if(node.end){
-    const endDiv = document.createElement("div");
-    endDiv.className = "ending";
-    endDiv.innerHTML = "💖 THE END 💖 — 새로 시작하려면 버튼을 눌러주세요.";
+    // 종료 텍스트는 이미 위에서 출력됨
+    // 약간의 딜레이 후 종료 메시지 + 재시작 버튼
+    setTimeout(()=>{
+      const endDiv = document.createElement("div");
+      endDiv.className = "ending";
+      endDiv.innerHTML = "💖 THE END 💖 — 새로 시작하려면 버튼을 눌러주세요.";
 
-    const restartBtn = document.createElement("button");
-    restartBtn.textContent = "처음으로 돌아가기";
-    restartBtn.className = "choice-btn";
-    restartBtn.onclick = () => showNode("start");
+      const restartBtn = document.createElement("button");
+      restartBtn.textContent = "처음으로 돌아가기";
+      restartBtn.className = "choice-btn";
+      restartBtn.onclick = () => showNode("start");
 
-    choicesEl.appendChild(endDiv);
-    choicesEl.appendChild(restartBtn);
+      choicesEl.appendChild(endDiv);
+      choicesEl.appendChild(restartBtn);
+    }, 50);
+
     return;
   }
 
-  // 선택지 버튼
-  if(node.choices){
-    node.choices.forEach(c=>{
-      const btn=document.createElement("button");
-      btn.className="choice-btn";
-      btn.textContent=c.text;
-      btn.onclick=()=>showNode(c.next);
-      choicesEl.appendChild(btn);
-    });
-  }
-}
-
-// 게임 시작
-showNode("start");
+  // 선택
