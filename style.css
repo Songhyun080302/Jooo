@@ -1,48 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom right, #ffe6f0, #ffc6d9);
-  font-family: 'Gaegu', 'Jua', sans-serif;
-  color: #333;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: 'Gamja Flower', cursive;
+  background: #000;
+  overflow: hidden;
 }
 
-#game-container {
-  background: #fffafa;
-  border-radius: 20px;
-  padding: 25px;
-  width: 85%;
-  max-width: 600px;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
-  text-align: center;
-  border: 3px solid #ffb6c1;
+#bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.85);
 }
 
-#story {
+#char {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 80%;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none; /* 버튼 클릭 막지 않게 */
+}
+
+#game {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+}
+
+#speaker {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #ff4da6;
+}
+
+#text {
   font-size: 20px;
-  margin-bottom: 20px;
-  line-height: 1.6;
-  white-space: pre-line;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+#choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .choice-btn {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 14px;
-  background: #ffd6e0;
-  border: 2px solid #ff9eb5;
-  border-radius: 12px;
-  font-size: 17px;
-  font-family: 'Jua', sans-serif;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  background: #ffb6c1;
+  transition: 0.2s;
 }
 
 .choice-btn:hover {
-  background: #ffb6c1;
-  transform: scale(1.05);
+  background: #ff85a1;
+}
+
+.ending {
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
 }
