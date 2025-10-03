@@ -1,58 +1,66 @@
-/* === 기본 초기화 === */
+/* === 초기화 === */
 * { margin:0; padding:0; box-sizing:border-box; }
-body, html { width:100%; height:100%; font-family:'Nanum Brush Script', 'Baloo 2', cursive; background:#ffeef7; overflow:hidden; }
+body, html { width:100%; height:100%; font-family:'Baloo 2', cursive; background:#f5f7fa; overflow:hidden; }
 
 /* === 배경 === */
 #bg {
   position:fixed; top:0; left:0; width:100%; height:100%;
-  background: linear-gradient(to bottom right, #ffd4e0, #ffeef7);
+  background: linear-gradient(135deg, #f7d1e0, #91a8d0); /* 로즈쿼츠 → 세레니티 */
   background-size:cover; background-position:center;
-  filter: brightness(0.9);
+  filter: brightness(0.9) blur(1px);
   z-index:-2;
 }
 
 /* === 캐릭터 === */
 #char {
   position:fixed; bottom:0; left:50%; transform:translateX(-50%);
-  max-height:75%; transition:opacity 0.5s ease-in-out;
-  opacity:0; z-index:1;
+  max-height:70%;
+  transition:opacity 0.5s ease-in-out;
+  opacity:0;
+  z-index:1;
+  pointer-events:none;
 }
 
 /* === 게임 박스 === */
 #game {
   position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
   width:90%; max-width:800px;
-  background: rgba(255,255,255,0.85);
-  border-radius:30px; padding:25px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius:30px;
+  padding:25px;
   display:flex; flex-direction:column; align-items:center;
   box-shadow:0 15px 35px rgba(0,0,0,0.25);
-  backdrop-filter:blur(8px);
-  border: 2px dashed #ffc0dd;
+  backdrop-filter: blur(10px);
+  border: 2px solid #d36cae;
 }
 
 /* === 말풍선 === */
 #textbox { width:100%; margin-bottom:15px; }
-#speaker { font-weight:bold; font-size:1.6em; color:#ff6ab2; text-shadow:1px 1px 2px #fff; margin-bottom:8px; text-align:center; }
-#text { font-size:1.3em; color:#555; line-height:1.6em; min-height:70px; text-align:center; }
+#speaker { font-weight:bold; font-size:1.6em; color:#d36cae; text-align:center; text-shadow:1px 1px 2px #fff; margin-bottom:8px; }
+#text { font-size:1.2em; line-height:1.6em; color:#333; text-align:center; min-height:70px; }
 
-/* === 선택지 === */
+/* === 선택지 버튼 === */
 #choices { width:100%; display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
 .choice-btn {
-  padding:12px 25px; border-radius:25px; border:none; cursor:pointer;
-  background: linear-gradient(135deg,#ff92c2,#ff5e9c);
-  color:white; font-weight:bold; font-size:1.2em;
-  box-shadow:0 6px 18px rgba(0,0,0,0.2);
-  transition:0.2s transform, 0.2s box-shadow, 0.2s background;
-  font-family:'Baloo 2', cursive;
+  padding:12px 25px;
+  border-radius:20px;
+  border:none;
+  cursor:pointer;
+  background: linear-gradient(135deg, #d36cae, #91a8d0);
+  color:white;
+  font-weight:bold;
+  font-size:1.1em;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  transition:0.2s all;
 }
 .choice-btn:hover {
-  transform:translateY(-3px) scale(1.05);
-  box-shadow:0 10px 25px rgba(0,0,0,0.3);
-  background: linear-gradient(135deg,#ffb2d1,#ff6aa2);
+  transform:scale(1.05);
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #ffb2d1, #91c0d0);
 }
 
 /* === 엔딩 메시지 === */
-.ending { font-size:1.3em; text-align:center; margin-bottom:12px; color:#ff3d6f; font-weight:bold; }
+.ending { font-size:1.3em; text-align:center; margin-bottom:12px; color:#d36cae; font-weight:bold; }
 
 /* === 모바일 대응 === */
 @media screen and (max-width:600px){
