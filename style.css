@@ -1,45 +1,54 @@
-/* === 기본 레이아웃 & 폰트 === */
+/* === 기본 초기화 === */
 * { margin:0; padding:0; box-sizing:border-box; }
-body, html { width:100%; height:100%; overflow:hidden; font-family: 'Baloo 2', 'Nanum Brush Script', cursive; background:#f5f7fa; }
+body, html { width:100%; height:100%; font-family:'Baloo 2', 'Nanum Brush Script', cursive; background:#f5f7fa; overflow:hidden; }
 
-/* === 배경 이미지 === */
-#bg { position:fixed; top:0; left:0; width:100%; height:100%; background-size:cover; background-position:center; filter:brightness(0.85); z-index:-2; }
+/* === 배경 === */
+#bg { position:fixed; top:0; left:0; width:100%; height:100%; background-size:cover; background-position:center; filter: brightness(0.7); z-index:-2; }
 
-/* === 캐릭터 이미지 === */
-#char { position:fixed; bottom:0; left:50%; transform:translateX(-50%); max-height:80%; transition:opacity 0.5s ease-in-out; z-index:1; opacity:0; }
+/* === 캐릭터 === */
+#char {
+  position:fixed; bottom:0; left:50%; transform:translateX(-50%);
+  max-height:75%; transition:opacity 0.5s ease-in-out;
+  opacity:0; z-index:1;
+}
 
 /* === 게임 박스 === */
 #game {
-  position: fixed;
-  bottom: 20px; left:50%;
-  transform: translateX(-50%);
-  width:90%; max-width:800px;
-  background: linear-gradient(180deg, rgba(240,222,228,0.9), rgba(207,228,242,0.9));
-  border-radius:20px; padding:20px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
-  z-index:2; display:flex; flex-direction:column; align-items:center;
+  position:fixed; bottom:15px; left:50%; transform:translateX(-50%);
+  width:90%; max-width:800px; background:rgba(255,255,255,0.9);
+  border-radius:25px; padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  display:flex; flex-direction:column; align-items:center;
+  backdrop-filter:blur(6px);
 }
 
-#speaker { font-weight:bold; font-size:1.5em; color:#d36cae; text-shadow:1px 1px 2px #fff; margin-bottom:8px; }
-#text { font-size:1.2em; color:#333; line-height:1.5em; min-height:60px; text-align:center; }
+/* === 말풍선 === */
+#textbox { width:100%; margin-bottom:15px; }
+#speaker { font-weight:bold; font-size:1.6em; color:#d36cae; text-shadow:1px 1px 2px #fff; margin-bottom:8px; text-align:center; }
+#text { font-size:1.3em; color:#333; line-height:1.6em; min-height:70px; text-align:center; }
 
 /* === 선택지 === */
-#choices { margin-top:15px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+#choices { width:100%; display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
 .choice-btn {
-  padding:12px 25px; border-radius:15px; border:none; cursor:pointer;
-  background: linear-gradient(135deg,#ff7eb3,#ff758c);
-  font-size:1.1em; font-weight:bold; color:white;
-  transition: transform 0.2s, box-shadow 0.2s;
-  font-family:'Baloo 2','Nanum Brush Script',cursive;
+  padding:12px 25px; border-radius:20px; border:none; cursor:pointer;
+  background: linear-gradient(135deg,#ff9ac1,#ff5e8c);
+  color:white; font-weight:bold; font-size:1.2em;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  transition:0.2s transform, 0.2s box-shadow, 0.2s background;
 }
-.choice-btn:hover { transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.3); }
+.choice-btn:hover {
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg,#ffade0,#ff6aa2);
+}
 
-.ending { font-size:1.2em; text-align:center; margin-bottom:10px; color:#ff3d6f; }
+/* === 엔딩 메시지 === */
+.ending { font-size:1.3em; text-align:center; margin-bottom:12px; color:#ff3d6f; font-weight:bold; }
 
 /* === 모바일 대응 === */
 @media screen and (max-width:600px){
   #game { padding:15px; }
-  #speaker { font-size:1.2em; }
-  #text { font-size:1em; }
+  #speaker { font-size:1.3em; }
+  #text { font-size:1.1em; }
   .choice-btn { font-size:1em; padding:10px 15px; }
 }
