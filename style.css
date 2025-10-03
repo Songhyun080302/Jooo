@@ -1,9 +1,15 @@
 /* === 기본 초기화 === */
 * { margin:0; padding:0; box-sizing:border-box; }
-body, html { width:100%; height:100%; font-family:'Baloo 2', 'Nanum Brush Script', cursive; background:#f5f7fa; overflow:hidden; }
+body, html { width:100%; height:100%; font-family:'Nanum Brush Script', 'Baloo 2', cursive; background:#ffeef7; overflow:hidden; }
 
 /* === 배경 === */
-#bg { position:fixed; top:0; left:0; width:100%; height:100%; background-size:cover; background-position:center; filter: brightness(0.7); z-index:-2; }
+#bg {
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(to bottom right, #ffd4e0, #ffeef7);
+  background-size:cover; background-position:center;
+  filter: brightness(0.9);
+  z-index:-2;
+}
 
 /* === 캐릭터 === */
 #char {
@@ -14,32 +20,35 @@ body, html { width:100%; height:100%; font-family:'Baloo 2', 'Nanum Brush Script
 
 /* === 게임 박스 === */
 #game {
-  position:fixed; bottom:15px; left:50%; transform:translateX(-50%);
-  width:90%; max-width:800px; background:rgba(255,255,255,0.9);
-  border-radius:25px; padding:25px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+  width:90%; max-width:800px;
+  background: rgba(255,255,255,0.85);
+  border-radius:30px; padding:25px;
   display:flex; flex-direction:column; align-items:center;
-  backdrop-filter:blur(6px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.25);
+  backdrop-filter:blur(8px);
+  border: 2px dashed #ffc0dd;
 }
 
 /* === 말풍선 === */
 #textbox { width:100%; margin-bottom:15px; }
-#speaker { font-weight:bold; font-size:1.6em; color:#d36cae; text-shadow:1px 1px 2px #fff; margin-bottom:8px; text-align:center; }
-#text { font-size:1.3em; color:#333; line-height:1.6em; min-height:70px; text-align:center; }
+#speaker { font-weight:bold; font-size:1.6em; color:#ff6ab2; text-shadow:1px 1px 2px #fff; margin-bottom:8px; text-align:center; }
+#text { font-size:1.3em; color:#555; line-height:1.6em; min-height:70px; text-align:center; }
 
 /* === 선택지 === */
 #choices { width:100%; display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
 .choice-btn {
-  padding:12px 25px; border-radius:20px; border:none; cursor:pointer;
-  background: linear-gradient(135deg,#ff9ac1,#ff5e8c);
+  padding:12px 25px; border-radius:25px; border:none; cursor:pointer;
+  background: linear-gradient(135deg,#ff92c2,#ff5e9c);
   color:white; font-weight:bold; font-size:1.2em;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  box-shadow:0 6px 18px rgba(0,0,0,0.2);
   transition:0.2s transform, 0.2s box-shadow, 0.2s background;
+  font-family:'Baloo 2', cursive;
 }
 .choice-btn:hover {
   transform:translateY(-3px) scale(1.05);
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
-  background: linear-gradient(135deg,#ffade0,#ff6aa2);
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg,#ffb2d1,#ff6aa2);
 }
 
 /* === 엔딩 메시지 === */
