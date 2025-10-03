@@ -72,14 +72,32 @@ const story = {
   sujin_angry: { speaker: "수진", text: "미친 민규가 너랑 논다고? 호시는 어딨음?", choices: [{ text: "계속", next: "next_city" }] },
   sujin_love: { speaker: "수진", text: "헐.. 미친 민규를 버리고 나를 선택해 준거야..?\n지윤아 나랑 사귀자♥\n(지윤과 수진이 결혼했습니다) — END", end: true },
 
-  next_city: { 
-    speaker: "민규", 
-    text: "그럼 우리 이제 시내가자!!\n(갑자기 준휘♡송현이 등장했습니다)\n송현: 민규지윤! 너네의 그 사이좋은 모습이 너무 꼴보기 싫어!\n준휘: 당장 떨어지지 않으면 우리가 헤어지겠어!", 
-    choices: [
-      { text: "우정", next: "friend_end" }, 
-      { text: "사랑", next: "love_break1" }
-    ] 
-  },
+next_city: { 
+  speaker: "민규", 
+  text: "그럼 우리 이제 시내가자!!", 
+  choices: [{ text: "계속", next: "next_city2" }]
+},
+
+next_city2: { 
+  speaker: "나레이션", 
+  text: "갑자기 준휘♡송현이 등장했습니다.", 
+  choices: [{ text: "계속", next: "next_city3" }]
+},
+
+next_city3: { 
+  speaker: "송현", 
+  text: "민규지윤! 너네의 그 사이좋은 모습이 너무 꼴보기 싫어!", 
+  choices: [{ text: "계속", next: "next_city4" }]
+},
+
+next_city4: { 
+  speaker: "준휘", 
+  text: "당장 떨어지지 않으면 우리가 헤어지겠어!", 
+  choices: [
+    { text: "우정", next: "friend_end" }, 
+    { text: "사랑", next: "love_break1" }
+  ]
+},
 
   friend_end: { speaker: "민규", text: "ㅎㅎ 고마워 지윤아 나 갈게~ — END", end: true },
 
