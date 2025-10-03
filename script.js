@@ -128,7 +128,6 @@ const story = {
   bye_end: { speaker: "민규", text: "내 삶을 무시하는구나 우리 헤어지자 — END", end: true }
 };
 
-// === DOM 제어 ===
 const speakerEl = document.getElementById("speaker");
 const textEl = document.getElementById("text");
 const choicesEl = document.getElementById("choices");
