@@ -1,27 +1,30 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <title>💖 미연시 게임 💖</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 배경 -->
+  <!-- 배경 사진 -->
   <div id="bg"></div>
 
-  <!-- 캐릭터 -->
-  <img id="char" src="" alt="캐릭터">
+  <!-- 캐릭터 이미지 -->
+  <img id="char" src="https://picsum.photos/seed/char/400/600" alt="캐릭터">
 
-  <!-- 게임 박스 -->
+  <!-- 게임 UI -->
   <div id="game">
     <div id="textbox">
-      <div id="speaker"></div>
-      <div id="text"></div>
+      <div id="speaker">나레이션</div>
+      <div id="text">(똑똑똑) 문을 열까?</div>
     </div>
-    <div id="choices"></div>
+    <div id="choices">
+      <button class="choice-btn">문을 열지 않는다</button>
+      <button class="choice-btn">문을 연다</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
